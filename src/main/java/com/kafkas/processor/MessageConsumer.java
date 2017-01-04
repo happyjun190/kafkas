@@ -25,6 +25,11 @@ public class MessageConsumer implements Runnable {
 			String msg = new String(it.next().message());
 			String[] msgLines = msg.split("\n");// 根据换行符分割，然后可以根据第二行判断是否Exception
 			logger.info("message consumer read the message is : {}", msgLines);
+			/*try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}*/
 		}
 		logger.info("Shutting down Thread: {}", threadNumber);
 	}

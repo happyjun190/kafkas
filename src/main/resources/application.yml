@@ -7,7 +7,7 @@ spring:
 server:
   port: -1
 management:
-  port: 64003
+  port: 64004
 info:
   app:
     name: "@project.name@" #从pom.xml中获取
@@ -21,6 +21,8 @@ spring:
   profiles: dev
 zookeeper:
   host1: 127.0.0.1:2181
+  host2: 127.0.0.1:2182
+  host3: 127.0.0.1:2183
 
 #---
 ## 测试环境配置

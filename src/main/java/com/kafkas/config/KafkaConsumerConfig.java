@@ -17,13 +17,17 @@ import java.util.Properties;
 public class KafkaConsumerConfig {
     @Value("${zookeeper.host1}")
     private String zookeeper1;
+    @Value("${zookeeper.host2}")
+    private String zookeeper2;
+    @Value("${zookeeper.host3}")
+    private String zookeeper3;
 
     private String groupId = "kafkaCG1";
 
     @Bean
     public ConsumerConnector cousumer() {
         Properties properties = new Properties();
-        properties.put("zookeeper.connect", zookeeper1);
+        properties.put("zookeeper.connect", zookeeper1 + "," + zookeeper2 + "," + zookeeper3);
         properties.put("group.id", groupId);
         properties.put("zookeeper.session.timeout.ms", "400");
         properties.put("zookeeper.sync.time.ms", "200");
