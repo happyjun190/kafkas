@@ -38,7 +38,7 @@ public class KafkaConsumerService {
     @PostConstruct
     public void init() {
         String topic = "my-replicated-topic";
-        int threads = 10;
+        int threads = 4;
 
         topicCountMap = new HashMap<>();
         topicCountMap.put(topic, new Integer(threads));

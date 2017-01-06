@@ -1,4 +1,4 @@
-# 开发环境默认的profile，其他环境需要指定启动参数，比如：java -jar log-monitor.jar --spring.profiles.active=prod
+# 开发环境默认的profile，其他环境需要指定启动参数，比如：java -jar kafkas.jar --spring.profiles.active=prod
 spring:
   profiles:
     active: dev
