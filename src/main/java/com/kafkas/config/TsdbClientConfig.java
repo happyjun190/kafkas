@@ -16,7 +16,7 @@ public class TsdbClientConfig {
     String SECRET_ACCESS_KEY = "bbb";//<your-secret-access-key> // 用户的Secret Access Key
     String ENDPOINT = "databasename.tsdb.iot.gz.baidubce.com";//<your-tsdb-database-endpoint>;    // 用户的时序数据库域名，形式如databasename.tsdb.iot.gz.baidubce.com
 
-    /*@Bean
+    @Bean
     public TsdbClient tsdbClient() {
         // 创建配置
         BceClientConfiguration config = new BceClientConfiguration()
@@ -26,7 +26,7 @@ public class TsdbClientConfig {
         // 初始化一个TsdbClient
         TsdbClient tsdbClient = new TsdbClient(config);
         return tsdbClient;
-    }*/
+    }
 
 
 }

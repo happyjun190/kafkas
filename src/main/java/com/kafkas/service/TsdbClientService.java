@@ -17,12 +17,12 @@ public class TsdbClientService {
     //logger 日志处理
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    /*@Autowired
+    @Autowired
     private TsdbClient tsdbClient;
 
     @PostConstruct
     public void init() {
         logger.info("测试百度时序数据库客户端");
         tsdbClient.getMetrics();
-    }*/
+    }
 }
