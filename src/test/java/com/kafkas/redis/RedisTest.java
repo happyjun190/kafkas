@@ -28,6 +28,7 @@ public class RedisTest {
         redisCarMapInfo.put(redisCarDTO1.getCartId(), redisCarDTO1.toString());
         redisCarMapInfo.put(redisCarDTO2.getCartId(), redisCarDTO2.toString());
         redisCarMapInfo.put(redisCarDTO3.getCartId(), redisCarDTO3.toString());
+        redisCarMapInfo.put(redisCarDTO4.getCartId(), redisCarDTO4.toString());
 
         String setKey = USER_STORE_REDIS_CAR;
         String hsetKey = USER_STORE_REDIS_CAR+5+"_"+ 4;
@@ -36,12 +37,19 @@ public class RedisTest {
         jedis.set("hello","hello world");
         System.out.println(jedis.get("hello"));
 
-
-        jedis.hset(hsetKey, redisCarDTO1.getCartId(), redisCarDTO1.toString());
+        jedis.hmset(hsetKey, redisCarMapInfo);
+        //jedis.hdel(hsetKey, redisCarDTO1.getCartId(), redisCarDTO2.getCartId(),redisCarDTO3.getCartId(),redisCarDTO4.getCartId());
+        /*jedis.hset(hsetKey, redisCarDTO1.getCartId(), redisCarDTO1.toString());
         jedis.hset(hsetKey, redisCarDTO2.getCartId(), redisCarDTO2.toString());
         jedis.hset(hsetKey, redisCarDTO3.getCartId(), redisCarDTO3.toString());
         jedis.hset(hsetKey, redisCarDTO4.getCartId(), redisCarDTO4.toString());
-        jedis.hset(hsetKey, redisCarDTO3.getCartId(), redisCarDTO3.toString());
+        jedis.hset(hsetKey, redisCarDTO3.getCartId(), redisCarDTO3.toString());*/
+
+        List<String> value5 = jedis.hmget(hsetKey, "4");
+
+        for(String value:value5) {
+            System.out.println(value);
+        }
 
         Map<String, String> maps = jedis.hgetAll(hsetKey);
         for(String key:maps.keySet()) {
