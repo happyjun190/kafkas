@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class RedisTest {
         System.out.println(jedis.get("hello"));
 
         jedis.hmset(hsetKey, redisCarMapInfo);
+
         //jedis.hdel(hsetKey, redisCarDTO1.getCartId(), redisCarDTO2.getCartId(),redisCarDTO3.getCartId(),redisCarDTO4.getCartId());
         /*jedis.hset(hsetKey, redisCarDTO1.getCartId(), redisCarDTO1.toString());
         jedis.hset(hsetKey, redisCarDTO2.getCartId(), redisCarDTO2.toString());
